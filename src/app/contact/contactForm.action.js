@@ -1,9 +1,9 @@
 "use server";
 
 import connectDB from "@/db/connectDB";
-import Contact from "@/models/Contact";
+import Contact from "@/models/Contact.model";
 
-const contactFormAction = async (formData) => {
+const contactFormAction = async (previousState, formData) => {
   //   console.log(formData.get("name"));
   //   console.log(formData.get("email"));
   //   console.log(formData.get("message"));

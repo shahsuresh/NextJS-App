@@ -15,7 +15,7 @@ const Navbar = () => {
           <li>
             <Link
               href='/'
-              className='transition duration-300 hover:text-yellow-300 hover:underline underline-offset-4'
+              className='transition duration-300 hover:text-yellow-300'
             >
               Home
             </Link>
@@ -23,7 +23,7 @@ const Navbar = () => {
           <li>
             <Link
               href='/services'
-              className='transition duration-300 hover:text-yellow-300 hover:underline underline-offset-4'
+              className='transition duration-300 hover:text-yellow-300  '
             >
               Services
             </Link>
@@ -31,7 +31,7 @@ const Navbar = () => {
           <li>
             <Link
               href='/about'
-              className='transition duration-300 hover:text-yellow-300 hover:underline underline-offset-4'
+              className='transition duration-300 hover:text-yellow-300 '
             >
               About
             </Link>
@@ -42,6 +42,14 @@ const Navbar = () => {
               className='transition duration-300 hover:text-yellow-300 hover:underline underline-offset-4'
             >
               Contact
+            </Link>
+          </li>
+          <li>
+            <Link
+              href='/contact-form-client'
+              className='transition duration-300 hover:text-yellow-300 hover:underline underline-offset-4'
+            >
+              Contact Form(client)
             </Link>
           </li>
         </ul>
