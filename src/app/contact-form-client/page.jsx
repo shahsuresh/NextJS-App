@@ -2,6 +2,7 @@
 
 import React, { useActionState, useState } from "react";
 import contactFormAction from "../contact/contactForm.action";
+import { useFormStatus } from "react-dom";
 
 // const contactFormAction = (formData) => {
 //   const { name, email, message } = Object.fromEntries(formData.entries());
@@ -102,15 +103,9 @@ const ContactFormClient = () => {
         </div>
 
         {/* Submit Button */}
-        <div className='flex justify-center'>
-          <button
-            type='submit'
-            disabled={isPending}
-            className='bg-purple-600 text-white px-6 py-3 rounded-lg text-lg font-semibold transition duration-300 hover:bg-purple-700 focus:outline-none'
-          >
-            {isPending ? "Submitting..." : "Submit"}
-          </button>
-        </div>
+        {/* submit button imported inside form which use useFormStatus hook  */}
+        <SubmitButton />
+
         {state?.error && (
           <p className='text-red-500 bg-rose-100 p-2 space-y-1'>
             {state.message}
@@ -127,3 +122,18 @@ const ContactFormClient = () => {
 };
 
 export default ContactFormClient;
+
+const SubmitButton = () => {
+  const { data, pending, method } = useFormStatus();
+  return (
+    <div className='flex justify-center'>
+      <button
+        type='submit'
+        disabled={pending}
+        className='bg-purple-600 text-white px-6 py-3 rounded-lg text-lg font-semibold transition duration-300 hover:bg-purple-700 focus:outline-none'
+      >
+        {pending ? "Submitting..." : "Submit"}
+      </button>
+    </div>
+  );
+};
